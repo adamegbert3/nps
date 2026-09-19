@@ -171,3 +171,75 @@ svg {
   background-color: var(--bs-black);
   fill: white;
 }
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+.link-grid {
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.link-grid span {
+  color: white;
+  font-size: 12px;
+}
+
+.link-grid > a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.global-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  background-color: var(--bs-black);
+}
+
+.global-header__right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.hero {
+  position: relative;
+}
+
+ .hero img {
+   display: block;
+   width: 100%;
+ }
+
+a.hero-banner__title {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.hero-banner__subtitle span {
+  display: block;
+  
+}
+
+.park-title{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  padding: 10px;
+  color: white;
+  background-color: rgb(0 0 0 / 50%);
+}
