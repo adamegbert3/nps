@@ -209,11 +209,11 @@ svg {
   gap: 15px;
 }
 
-.hero {
+.hero-banner {
   position: relative;
 }
 
- .hero img {
+ .hero-banner img {
    display: block;
    width: 100%;
  }
@@ -229,7 +229,21 @@ a.hero-banner__title {
   
 }
 
-.park-title{
+.info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+/* I had it at max 600 but the teachers copy had it at min 630 */
+/* I used grid cause I am more comfortable with it teacher used flex */
+@media (max-width: 600px) {
+  .info {
+  display: grid;
+  grid-template-columns: 1fr;
+  }
+}
+
+.hero-banner__content {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -242,4 +256,10 @@ a.hero-banner__title {
   padding: 10px;
   color: white;
   background-color: rgb(0 0 0 / 50%);
+}
+
+#park-footer {
+  background-image: url('/images/footer.png');
+  padding: 15px 0px 0px 30px;
+  line-height: 10px;
 }

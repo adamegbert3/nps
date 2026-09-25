@@ -81,7 +81,7 @@ const park = {
       altText:
         "A crowd of people standing along a wooden boardwalk watches a geyser erupt.",
       caption: "Aurum Geyser erupting",
-      url: "https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg"
+      url: "https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg" 
     },
     {
       credit: "NPS/Diane Renkin",
@@ -178,6 +178,31 @@ const park = {
   name: "Yellowstone",
   designation: "National Park"
 };
+
+
+// These numbers were 2 3 9 but the links didn't work. Looks like it didn't work for others in Teams either.
+export const parkInfoLinks = [
+  {
+    name: "Current Conditions &#x203A;",
+    link: "conditions.html",
+    image: park.images[0].url,
+    description:
+      "See what conditions to expect in the park before leaving on your trip!"
+  },
+  {
+    name: "Fees and Passes &#x203A;",
+    link: "fees.html",
+    image: park.images[0].url,
+    description: "Learn about the fees and passes that are available."
+  },
+  {
+    name: "Visitor Centers &#x203A;",
+    link: "visitor_centers.html",
+    image: park.images[0].url,
+    description: "Learn about the visitor centers in the park."
+  }
+];
+
 
 export function getParkData() {
   return park;
