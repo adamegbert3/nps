@@ -1,0 +1,13 @@
+.info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+/* I had it at max 600 but the teachers copy had it at min 630 */
+/* I used grid cause I am more comfortable with it teacher used flex */
+@media (max-width: 600px) {
+  .info {
+  display: grid;
+  grid-template-columns: 1fr;
+  }
+}

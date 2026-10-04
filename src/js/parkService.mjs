@@ -1,3 +1,28 @@
+const baseUrl = "https://developer.nps.gov/api/v1/";
+const apiKey = import.meta.env.VITE_NPS_API_KEY;
+async function getJson(url) {
+    const options = {
+    method: "GET",
+    headers: {
+      "X-Api-Key": apiKey
+    }
+  };
+  
+  let data = {};
+  const response = await fetch(baseUrl + url, options);
+  // check to make sure the reponse was ok.
+  if (response.ok) {
+    // convert to JSON
+    data = await response.json();
+  } else throw new Error("response not ok");
+  return data;
+  }
+  
+export async function getParkData() {
+    const parkData = await getJson("parks?parkCode=glac")
+  
+    return parkData.data[0];
+}
 const park = {
   id: "F58C6D24-8D10-4573-9826-65D42B8B83AD",
   url: "https://www.nps.gov/yell/index.htm",
@@ -181,7 +206,7 @@ const park = {
 
 
 // These numbers were 2 3 9 but the links didn't work. Looks like it didn't work for others in Teams either.
-export const parkInfoLinks = [
+ const parkInfoLinks = [
   {
     name: "Current Conditions &#x203A;",
     link: "conditions.html",
@@ -204,6 +229,26 @@ export const parkInfoLinks = [
 ];
 
 
-export function getParkData() {
-  return park;
+
+export function getInfoLinks(data) {
+  const withUpdatedImages = parkInfoLinks.map((item, index) => {
+      item.image = data[index + 2].url;
+      return item;
+});
+  return withUpdatedImages;
 }
+
+
+
+// export async function getParkData() {
+//     let data = {}
+//   const response = await fetch(baseUrl + "parks" + "?parkCode=yell");
+//   const apiKey = import.meta.env.VITE_NPS_API_KEY;
+//   // check to make sure the reponse was ok.
+//   if (response.ok) {
+//     // convert to JSON
+//     data = await response.json();
+//   } else throw new Error("response not ok")
+//     return data;
+  
+// }
