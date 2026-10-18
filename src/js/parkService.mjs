@@ -23,6 +23,19 @@ export async function getParkData() {
   
     return parkData.data[0];
 }
+
+export async function getParkAlerts(parkCode) {
+    const getAlerts = await getJson(`alerts?parkCode=${parkCode}`);
+
+    return getAlerts.data;
+}
+
+export async function getVisitorCenterData(parkCode) {
+    const getVCData = await getJson(`visitorcenters?parkCode=${parkCode}`);
+
+    return getVCData.data;
+}
+
 const park = {
   id: "F58C6D24-8D10-4573-9826-65D42B8B83AD",
   url: "https://www.nps.gov/yell/index.htm",
