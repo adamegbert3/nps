@@ -53,3 +53,34 @@
   align-items: center;
   gap: 15px;
 }
+
+.global-nav {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 1.0s;
+}
+
+.global-nav_open {
+  display: none;
+  align-items: center;
+}
+
+.global-nav_closed {
+  display: flex;
+  align-items: center;
+}
+
+.global-nav_toggle[aria-expanded= "true"] .global-nav_closed {
+  display: none;
+}
+
+.global-nav_toggle[aria-expanded= "true"] .global-nav_open {
+  display: flex;
+  align-items: center;
+}
+
+.global-nav.show {
+  display: flex;
+  align-items: center;
+  max-height: 100vh;
+}
